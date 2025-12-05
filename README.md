@@ -4,7 +4,7 @@
 
 ## Description
 
-**Decor Treasure Hunt** automatically sets waypoints for the daily Decor Treasure Hunt quest, making it easy to find the hidden decoration item on your island.
+**Decor Treasure Hunt** automatically accepts, tracks, and completes the daily Decor Treasure Hunt quest, making it easy to find the hidden decoration item on your island.
 
 ### Features
 
@@ -12,14 +12,18 @@
 - **Blizzard Map Integration** - Uses the native WoW waypoint system with super tracking
 - **TomTom Support** - Optional integration with TomTom for enhanced waypoint functionality
 - **Smart Detection** - Automatically detects if you already have the quest active when logging in
+- **Fully Automated** - Automatically accepts and turns in the Decor Treasure Hunt quest
+- **Configurable** - Toggle auto-accept/turn-in via the Addon Compartment at your minimap
 - **Fully Localized** - Supports all WoW client languages
 
 ### How It Works
 
-1. Accept the "Decor Treasure Hunt" quest on your island
+1. Talk to the quest giver, the addon automatically accepts the "Decor Treasure Hunt" quest
 2. A waypoint is automatically created at the treasure location
-3. Follow the waypoint on your map and minimap to find the decoration
-4. The waypoint is automatically removed when you complete or abandon the quest
+3. Follow the waypoint on your map and minimap to find and dig up the decoration
+4. Click the treasure chest, the addon automatically turns in the quest
+
+**Don't like auto-accept/turn-in?** Click the Addon Compartment icon (the small number near your minimap) to disable this feature!
 
 ### Perfect For
 

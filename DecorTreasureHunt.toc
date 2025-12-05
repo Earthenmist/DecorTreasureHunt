@@ -19,6 +19,8 @@
 ## Category-zhCN: 住宅
 ## Category-zhTW: 房屋
 ## OptionalDeps: TomTom
+## SavedVariables: DecorTreasureHuntDB
 
+Options.lua
 Data.lua
 DecorTreasureHunt.lua
