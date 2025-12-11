@@ -30,24 +30,41 @@ local L = {
         -- Main Addon
         QUEST_ACCEPTED = "Quest automatisch angenommen.",
         QUEST_TURNIN = "Quest automatisch abgegeben.",
+        WAYPOINT_SET = "Wegpunkt zum Schatzfundort gesetzt.",
+    },
+
+    esES = {
+        -- Opciones
+        AUTO_ACCEPT = "Aceptar misión automáticamente",
+        AUTO_TURNIN = "Entregar misión automáticamente",
+        TOOLTIP_TEXT = "Haz clic para configurar la aceptación y entrega automática de misiones",
+        AUTO_ACCEPT_ENABLED = "La aceptación automática ha sido |cnGREEN_FONT_COLOR:activada|r.",
+        AUTO_ACCEPT_DISABLED = "La aceptación automática ha sido |cnRED_FONT_COLOR:desactivada|r.",
+        AUTO_TURNIN_ENABLED = "La entrega automática ha sido |cnGREEN_FONT_COLOR:activada|r.",
+        AUTO_TURNIN_DISABLED = "La entrega automática ha sido |cnRED_FONT_COLOR:desactivada|r.",
+
+        -- Addon principal
+        QUEST_ACCEPTED = "Misión aceptada automáticamente.",
+        QUEST_TURNIN = "Misión entregada automáticamente.",
+        WAYPOINT_SET = "Punto de ruta establecido en la ubicación del tesoro.",
         WAYPOINT_SET = "Wegpunkt zum Schatzfundort gesetzt.",       
     },
 	
-	zhCN = {
-        -- Options
-        AUTO_ACCEPT = "自动接受任务",
-        AUTO_TURNIN = "自动完成任务",
-        TOOLTIP_TEXT = "点击设置自动接受与自动完成任务",
-        AUTO_ACCEPT_ENABLED = "自动接受任务已 |cnGREEN_FONT_COLOR：启用|r。",
-        AUTO_ACCEPT_DISABLED = "自动接受任务已 |cnRED_FONT_COLOR：禁用|r。",
-        AUTO_TURNIN_ENABLED = "自动完成任务已 |cnGREEN_FONT_COLOR：启用|r。",
-        AUTO_TURNIN_DISABLED = "自动完成任务已 |cnRED_FONT_COLOR：禁用|r。",
+    zhCN = {
+          -- Options
+          AUTO_ACCEPT = "自动接受任务",
+          AUTO_TURNIN = "自动完成任务",
+          TOOLTIP_TEXT = "点击设置自动接受与自动完成任务",
+          AUTO_ACCEPT_ENABLED = "自动接受任务已 |cnGREEN_FONT_COLOR：启用|r。",
+          AUTO_ACCEPT_DISABLED = "自动接受任务已 |cnRED_FONT_COLOR：禁用|r。",
+          AUTO_TURNIN_ENABLED = "自动完成任务已 |cnGREEN_FONT_COLOR：启用|r。",
+          AUTO_TURNIN_DISABLED = "自动完成任务已 |cnRED_FONT_COLOR：禁用|r。",
 
-        -- Main Addon
-        QUEST_ACCEPTED = "已自动接受任务。",
-        QUEST_TURNIN = "已自动完成任务。",
-        WAYPOINT_SET = "已设置通往宝藏位置的路径点。",
-    }
+          -- Main Addon
+          QUEST_ACCEPTED = "已自动接受任务。",
+          QUEST_TURNIN = "已自动完成任务。",
+          WAYPOINT_SET = "已设置通往宝藏位置的路径点。",
+      }
 };
 
 DTH.L = L[GetLocale()] or L["enUS"];
