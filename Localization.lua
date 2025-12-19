@@ -66,7 +66,7 @@ local L = {
         QUEST_ACCEPTED = "已自动接受任务。",
         QUEST_TURNIN = "已自动完成任务。",
         QUEST_PROGRESS = "目前已完成任务：|cnNORMAL_FONT_COLOR:%d|r/|cnNORMAL_FONT_COLOR:%d|r，宝藏位置：|cnNORMAL_FONT_COLOR:%s|r。",
-        WAYPOINT_SET = "已设置通往宝藏位置的路径点。",
+        WAYPOINT_SET = "已标记宝藏位置。",
     }
 };
 
