@@ -5,7 +5,27 @@ local L = DTH.L;
 local addonTitle = C_AddOns.GetAddOnMetadata(ADDON_NAME, "Title");
 addonTitle = addonTitle:gsub("|c%x%x%x%x%x%x%x%x", ""):gsub("|r", "");
 
+local function EnsureDB()
+    if not DecorTreasureHuntDB then
+        DecorTreasureHuntDB = {};
+    end
+
+    if DecorTreasureHuntDB.autoAccept == nil then
+        DecorTreasureHuntDB.autoAccept = true;
+    end
+
+    if DecorTreasureHuntDB.autoTurnIn == nil then
+        DecorTreasureHuntDB.autoTurnIn = true;
+    end
+end
+
+-- ============================================================
+-- Addon Compartment Menu (Blizzard)
+-- ============================================================
+
 local function MenuGenerator(owner, rootDescription)
+    EnsureDB();
+
     rootDescription:CreateTitle(addonTitle);
 
     rootDescription:CreateCheckbox(
@@ -49,3 +69,72 @@ AddonCompartmentFrame:RegisterAddon({
         GameTooltip:Hide();
     end
 });
+
+-- ============================================================
+-- Blizzard Settings (Modern)
+-- ============================================================
+
+local function RegisterSettings()
+    EnsureDB();
+
+    if not Settings or not Settings.RegisterVerticalLayoutCategory then
+        return;
+    end
+
+    local category = Settings.RegisterVerticalLayoutCategory(addonTitle);
+
+    do
+        local setting = Settings.RegisterAddOnSetting(
+            category,
+            "DTH_AUTO_ACCEPT",
+            "autoAccept",
+            DecorTreasureHuntDB,
+            type(DecorTreasureHuntDB.autoAccept),
+            L.AUTO_ACCEPT,
+            true
+        );
+
+        Settings.CreateCheckbox(category, setting, L.AUTO_ACCEPT);
+    end
+
+    do
+        local setting = Settings.RegisterAddOnSetting(
+            category,
+            "DTH_AUTO_TURNIN",
+            "autoTurnIn",
+            DecorTreasureHuntDB,
+            type(DecorTreasureHuntDB.autoTurnIn),
+            L.AUTO_TURNIN,
+            true
+        );
+
+        Settings.CreateCheckbox(category, setting, L.AUTO_TURNIN);
+    end
+
+    local initializer = Settings.CreateSettingInitializerData();
+    initializer.name = addonTitle;
+    initializer.tooltip = L.OPTIONS_DESCRIPTION;
+
+    Settings.RegisterAddOnCategory(category);
+end
+
+local settingsFrame = CreateFrame("Frame");
+settingsFrame:RegisterEvent("ADDON_LOADED");
+settingsFrame:SetScript("OnEvent", function(self, event, name)
+    if name ~= ADDON_NAME then
+        return;
+    end
+
+    RegisterSettings();
+end);
+
+-- Slash command (optional quick access)
+SLASH_DECORTREASUREHUNT1 = "/dth";
+SLASH_DECORTREASUREHUNT2 = "/decortreasurehunt";
+SlashCmdList["DECORTREASUREHUNT"] = function()
+    if Settings and Settings.OpenToCategory then
+        Settings.OpenToCategory(addonTitle);
+    end
+end;
+
+-- Contributor: Earthenmist (PR: Blizzard Settings panel + localization)
