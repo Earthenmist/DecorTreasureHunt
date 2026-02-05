@@ -98,7 +98,8 @@ local function OnEvent(self, event, questId)
 
     if (event == "GOSSIP_SHOW") then
         local guid = UnitGUID("npc");
-        if (not guid or IsShiftKeyDown() or not DecorTreasureHuntDB.autoAccept) then
+
+        if (not guid or issecretvalue(guid) or IsShiftKeyDown() or not DecorTreasureHuntDB.autoAccept) then
             return;
         end
 
